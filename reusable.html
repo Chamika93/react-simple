@@ -17,32 +17,17 @@
     <div id="rootReact"></div>
     <script type="text/babel">
       const rrootElement = document.getElementById("rootReact");
-      /* class Test extends React.Component {
-        render() {
-          return (
-            <div>
-              <p>This is a class test</p>
-            </div>
-          );
-        }
-      }*/
 
-      /*const Ntest = () => {
-        return (
-          <div>
-            <p>This is a function test</p>
-          </div>
-        );
-      };*/
-
+      const Text_ = x => <p>{x.msg}</p>;
       const eTest = (
         <div>
-          <p>This is a element test</p>
+          {Text_({ msg: "first" })}
+          {Text_({ msg: "second" })}
         </div>
       );
 
-      ReactDOM.render(eTest, rrootElement);
-      // console.log(Test);
+      ReactDOM.render(<Text_ msg="third" />, rrootElement);
+      console.log(<Text_ msg="third" />);
     </script>
   </body>
 </html>
